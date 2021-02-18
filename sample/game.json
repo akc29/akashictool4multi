@@ -1,0 +1,33 @@
+{
+	"width": 800,
+	"height": 600,
+	"fps": 30,
+	"main": "./script/main.js",
+	"assets": {
+		"main": {
+			"type": "script",
+			"path": "script/main.js",
+			"global": true
+		}
+	},
+	"moduleMainScripts": {
+		"@akc29/akashictool4multi": "node_modules/@akc29/akashictool4multi/lib/index.js",
+		"@akashic-extension/akashic-hover-plugin": "node_modules/@akashic-extension/akashic-hover-plugin/lib/index.js",
+		"@akashic-extension/resolve-player-info": "node_modules/@akashic-extension/resolve-player-info/lib/index.js"
+	},
+	"environment": {
+		"sandbox-runtime": "3",
+		"external": {
+			"coeLimited": "0"
+		}
+	},
+	"globalScripts": [
+		"node_modules/@akc29/akashictool4multi/lib/entry.js",
+		"node_modules/@akc29/akashictool4multi/lib/index.js",
+		"node_modules/@akashic-extension/akashic-hover-plugin/lib/Converter.js",
+		"node_modules/@akashic-extension/akashic-hover-plugin/lib/HoverPlugin.js",
+		"node_modules/@akashic-extension/akashic-hover-plugin/lib/index.js",
+		"node_modules/@akashic-extension/resolve-player-info/lib/FallbackDialog.js",
+		"node_modules/@akashic-extension/resolve-player-info/lib/index.js"
+	]
+}

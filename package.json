@@ -1,0 +1,44 @@
+{
+  "name": "@akc29/akashictool4multi",
+  "version": "1.1.0",
+  "description": "akashicのマルチプレイコンテンツを良い感じにサポートしてくれるやつ",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run clean && npm run build",
+    "clean": "rimraf ./lib",
+    "build": "tsc -p ./",
+    "test": "npm run test:jest && npm run lint",
+    "test:jest": "jest --config jest.config.js",
+    "lint": "eslint -c .eslintrc.js \"src/**/*.ts\" --fix",
+    "doc": "typedoc --out ./doc --mode file"
+  },
+  "author": "akc29",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "package.json",
+    "README.md",
+    "akashic-lib.json"
+  ],
+  "dependencies": {
+    "@akashic/akashic-engine": "~3.0.3",
+    "@akashic-extension/resolve-player-info": "~1.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.13",
+    "@types/node": "14.10.1",
+    "@typescript-eslint/eslint-plugin": "3.10.1",
+    "@typescript-eslint/parser": "3.10.1",
+    "eslint": "7.9.0",
+    "eslint-plugin-import": "2.22.0",
+    "jest": "26.4.2",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.3.0",
+    "typedoc": "^0.19.2",
+    "typescript": "3.9.7"
+  },
+  "publishConfig": {
+    "@akc29:registry": "https://registry.npmjs.org/"
+  }
+}

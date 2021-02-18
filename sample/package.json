@@ -1,0 +1,33 @@
+{
+  "name": "typescript-game-sample",
+  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "build": "rimraf ./script && tsc && akashic-cli-scan asset script",
+    "update": "akashic-cli-scan asset && akashic-cli-scan globalScripts",
+    "start": "akashic-sandbox .",
+    "export-zip": "rimraf game.zip && akashic-cli-export-zip -o game.zip -s",
+    "export-html": "rimraf game && akashic-cli-export-html -o game",
+    "test": "npm run test:jest",
+    "test:jest": "jest --config jest.config.js"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@akashic/akashic-cli-export-html": "0.7.66",
+    "@akashic/akashic-cli-export-zip": "0.6.51",
+    "@akashic/akashic-cli-scan": "0.5.46",
+    "@akashic/akashic-engine": "^3.0.3",
+    "@akashic/akashic-sandbox": "~0.16.20",
+    "@types/jest": "26.0.13",
+    "@types/node": "14.10.1",
+    "jest": "26.4.2",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.3.0",
+    "typescript": "3.9.7"
+  },
+  "dependencies": {
+    "@akc29/akashictool4multi": "1.1.0"
+  }
+}
