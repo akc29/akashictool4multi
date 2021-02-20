@@ -26,7 +26,7 @@ var tool = require("@akc29/akashictool4multi");
 var entry = new tool.AkashicEntry({
     scene: scene,
     playableLimit: 4, // 最大参加人数を4名に設定
-    startableCount: 2, // 最大参加人数を4名に設定
+    startableCount: 2, // ゲーム開始可能人数を2名に設定
     callbackAfterDicision: function (members: tool.PlayerInfo[]) {
         // 参加者抽選完了後に実行される処理
         // 大体ここでシーン遷移することになると思う
@@ -40,6 +40,7 @@ var entry = new tool.AkashicEntry({
         g.game.pushScene(nextScene);
     }
 });
+
 // 中略
 // 参加ボタン的なものを用意する
 var joinButton = new g.Sprite({
