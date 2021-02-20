@@ -22,8 +22,8 @@
     "akashic-lib.json"
   ],
   "dependencies": {
-    "@akashic/akashic-engine": "~3.0.3",
-    "@akashic-extension/resolve-player-info": "~1.0.1"
+    "@akashic-extension/resolve-player-info": "~1.0.1",
+    "@akashic/akashic-engine": "~3.0.3"
   },
   "devDependencies": {
     "@types/jest": "26.0.13",
