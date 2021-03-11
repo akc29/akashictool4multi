@@ -8,7 +8,7 @@ export interface PlayerInfo {
 	id: string;
 	/** プレイヤー名 */
 	name: string;
-	/** 
+	/**
 	 * プレミアム会員かどうか
 	 * @default false
 	*/
@@ -123,6 +123,7 @@ export class AkashicEntry {
 				const target = this.enteredMembers.filter(player => player.id === ev.data.playerId);
 				if (target.length > 0) {
 					target[0].name = ev.data.playerName;
+					target[0].isPremium = ev.data.isPremium;
 				}
 			}
 		});
@@ -158,8 +159,8 @@ export class AkashicEntry {
 
 	/**
 	 * ゲームの募集に関係ないオプション情報(例：ゲーム時間、ゲームの内容等)をセットする
-	 * @param key 
-	 * @param value 
+	 * @param key
+	 * @param value
 	 */
 	setOptionData(key: string, value: any): void {
 		g.game.raiseEvent(new g.MessageEvent({ message: "OPTION_DATA", key, value }));
@@ -174,7 +175,12 @@ export class AkashicEntry {
 			if (error) {
 				console.error(error);
 			} else if (playerInfo.name) {
-				g.game.raiseEvent(new g.MessageEvent({ message: "PLAYER_NAME", playerId, playerName: playerInfo.name }));
+				g.game.raiseEvent(new g.MessageEvent({
+					message: "PLAYER_NAME",
+					playerId,
+					playerName: playerInfo.name,
+					isPremium: playerInfo.userData.premium ?? false
+				}));
 			}
 		});
 	}
@@ -213,7 +219,7 @@ export class AkashicEntry {
 
 	/**
 	 * 指定したキーのオプション情報を返す
-	 * @param key 
+	 * @param key
 	 */
 	getOptionValue(key: string): any {
 		return this.optionMap[key];
