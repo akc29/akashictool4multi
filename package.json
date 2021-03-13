@@ -1,6 +1,6 @@
 {
   "name": "@akc29/akashictool4multi",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "akashicのマルチプレイコンテンツを良い感じにサポートしてくれるやつ",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
